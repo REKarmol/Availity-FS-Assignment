@@ -1,0 +1,80 @@
+<style>
+  label{
+      display: inline-block;
+      float: left;
+      clear: left;
+      width: 130px;
+      text-align: right;
+      margin: 5px;
+  }
+  input {
+    display: inline-block;
+    float: left;
+  }
+
+  p {
+    margin: 10px;
+  }
+
+  .btn-div{
+      display: inline-block;
+      float: left;
+      clear: left;
+      width: 280px;
+      text-align: right;
+      margin: 5px;
+  }
+
+  button{
+    position: relative;
+    right:    0;
+    bottom:   0;
+  }
+</style>
+
+<h1>Availity Registration</h1>
+<div>
+	<p>Please provide the following information</p>
+</div>
+<form #regForm="ngForm">
+	<div>
+		<label for="firstName">First name:</label>
+		<input name="firstName" required [(ngModel)]="firstName">
+	</div>
+	<div>
+		<label for="lastName">Last name:</label>
+		<input name="lastName" required [(ngModel)]="lastName">
+	</div>
+	<div>
+		<label for="npiNumber">NPI number:</label>
+		<input name="npiNumber" required [(ngModel)]="npiNumber">
+	</div>
+	<div>
+		<label for="businessStreet">Business street:</label>
+		<input name="businessStreet" required [(ngModel)]="businessStreet">
+	</div>
+	<div>
+		<label for="businessCity">Business city:</label>
+		<input name="businessCity" required [(ngModel)]="businessCity">
+	</div>
+	<div>
+		<label for="businessState">Business state:</label>
+		<input name="businessState" required [(ngModel)]="businessState">
+	</div>
+	<div>
+		<label for="businessZip">Business zip:</label>
+		<input name="businessZip" required [(ngModel)]="businessZip">
+	</div>
+	<div>
+		<label for="telephoneNumber">Telephone number:</label>
+		<input name="telephoneNumber" required [(ngModel)]="telephoneNumber">
+	</div>
+	<div>
+		<label for="emailAddress">Email address:</label>
+		<input name="emailAddress" required [(ngModel)]="emailAddress">
+	</div>
+	<div class="btn-div">
+		<button type="reset" (click)="onReset()">Reset</button>
+		<button type="submit" (click)="onSubmit()" [disabled]="!regForm.form.valid">Submit</button>
+	</div>
+</form>
