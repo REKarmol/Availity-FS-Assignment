@@ -106,7 +106,7 @@ namespace Enrollment
 
                 // our userDictionary converted to List<csvRecord>
                 var newList = kv.Value.ToList();
-                newList.Sort((a, b) => ((a.Value.LastName+"."+a.Value.FirstName).CompareTo((b.Value.LastName + "." + b.Value.FirstName))));
+                newList.Sort((a, b) => ((a.Value.LastName+" "+a.Value.FirstName).CompareTo((b.Value.LastName + " " + b.Value.FirstName))));
 
                 using (System.IO.StreamWriter file = new System.IO.StreamWriter(newFile))
                 {
