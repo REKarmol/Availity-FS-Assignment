@@ -21,7 +21,7 @@ namespace Enrollment
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog
             {
-                InitialDirectory = @"C:\Users\randy\source\repos\Availity-FS-Assignment\Question6\Enrollment",
+                InitialDirectory = @"C:\",
                 Title = "Browse Enrollment Files",
 
                 CheckFileExists = true,
@@ -39,6 +39,14 @@ namespace Enrollment
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 ProcessCsv processCsv = new ProcessCsv(openFileDialog1.FileName);
+                try
+                {
+                    processCsv.ProcessFile();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Exception", ex.Message);
+                }
             }
         }
 
